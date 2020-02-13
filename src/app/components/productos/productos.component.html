@@ -1,0 +1,10 @@
+<div>
+    <h4>Cuenta de Ahorros ({{ prodsCtaAhorro.length }}) </h4>
+    <hr>
+
+    <mat-grid-list cols="2" rowHeight="200px">
+        <mat-grid-tile *ngFor="let productoloc of prodsCtaAhorro;" colspan="1" rowspan="1">
+            <app-producto-tarjeta [producto]="productoloc"></app-producto-tarjeta>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,22 @@
+<mat-card class="product-card">
+    <mat-card-header>
+
+        <img mat-card-avatar *ngIf="producto.accountInformation.productType === 'CREDIT_CARD' && producto.id.charAt(0) === '4'" src="https://i0.pngocean.com/files/344/525/232/credit-card-computer-icons-mastercard-visa-visa.jpg">
+        <img mat-card-avatar *ngIf="producto.accountInformation.productType === 'CREDIT_CARD' && producto.id.charAt(0) === '5'" src="https://i0.pngocean.com/files/494/499/764/5bbf4cb6566b2-thumb.jpg">
+        <img mat-card-avatar *ngIf="producto.accountInformation.productType != 'CREDIT_CARD'" src="https://image.shutterstock.com/image-vector/no-image-available-sign-internet-260nw-261719003.jpg">
+
+        <mat-card-title> {{ producto.typeAccount }} </mat-card-title>
+        <mat-card-subtitle> Nro. {{ producto.accountInformation.accountIdentifier }} </mat-card-subtitle>
+
+        <a href="" class="lnk-detalle-producto">Ver detalle ></a>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <p>Saldo disponible:</p>
+        <h3>{{ producto.productAccountBalances.saldo_disponible.amount | currency:'COP':'symbol-narrow':'4.2-2' }}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
