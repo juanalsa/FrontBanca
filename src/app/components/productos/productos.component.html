@@ -1,10 +1,41 @@
 <div>
-    <h4>Cuenta de Ahorros ({{ prodsCtaAhorro.length }}) </h4>
-    <hr>
-
-    <mat-grid-list cols="2" rowHeight="200px">
-        <mat-grid-tile *ngFor="let productoloc of prodsCtaAhorro;" colspan="1" rowspan="1">
-            <app-producto-tarjeta [producto]="productoloc"></app-producto-tarjeta>
-        </mat-grid-tile>
-    </mat-grid-list>
+    Mostrar otros productos
+    <mat-slide-toggle (change)="cargarProdsOtrosBancos($event)"></mat-slide-toggle>
 </div>
+<br><br>
+
+<mat-accordion>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Cuenta de Ahorros ({{ prodsCtaAhorro.length }})</mat-panel-title>
+            <!-- <mat-panel-description>Productos de Ahorro</mat-panel-description> -->
+        </mat-expansion-panel-header>
+
+        <mat-grid-list cols="3" rowHeight="250px">
+            <mat-grid-tile *ngFor="let productoCtaAho of prodsCtaAhorro;" colspan="1" rowspan="1">
+
+                <app-cta-ahorros-tarjeta [producto]="productoCtaAho"></app-cta-ahorros-tarjeta>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Tarjeta de Crédito ({{ prodsTarjCred.length }})</mat-panel-title>
+            <!-- <mat-panel-description>Productos Crediticios</mat-panel-description> -->
+        </mat-expansion-panel-header>
+
+        <mat-grid-list cols="3" rowHeight="250px">
+            <mat-grid-tile *ngFor="let productoTrjCred of prodsTarjCred;" colspan="1" rowspan="1">
+
+                <app-tarj-cred-tarjeta [producto]="productoTrjCred"></app-tarj-cred-tarjeta>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </mat-expansion-panel>
+
+</mat-accordion>

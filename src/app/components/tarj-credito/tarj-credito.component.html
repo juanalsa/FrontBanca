@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>{{ producto.typeAccount }}</h1>
+    <h3>Nro. {{ producto.accountInformation.accountIdentifier | creditCard }}</h3>
+
+    <p *ngIf="producto.productAccountBalances.valor_pago_minimo">Próximo pago mínimo:<br>
+        <b class="txt-saldo-disp">
+            {{ producto.productAccountBalances.valor_pago_minimo.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b><br><br> Pago total: {{ producto.productAccountBalances.pago_total_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2' }}
+        <br> Fecha de pago: {{ producto.dueDate | date:"dd/MMM/yy" }}
+
+        <br><br><button mat-raised-button color="primary" class="btn-pagar-tc">PAGAR</button>
+    </p>
+
+    <p *ngIf="!producto.productAccountBalances.valor_pago_minimo">Cupo disponible:<br>
+        <b class="txt-saldo-disp">
+            {{ producto.productAccountBalances.cupo_disponible_compras_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b>
+        <br><br> Fecha de corte: {{ producto.dueDate | date:"dd/MMM/yy" }}
+        <br><br> Total gastado: {{ (producto.productAccountBalances.saldo_actual.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}
+
+        <mat-progress-bar mode="determinate" value="{{ (producto.productAccountBalances.saldo_actual.amount / producto.productAccountBalances.cupo_total.amount) * 100 }}"></mat-progress-bar>
+
+        <br> Cupo total: {{ producto.productAccountBalances.cupo_total.amount | currency:'COP':'symbol-narrow':'1.2-2' }}
+    </p>
+
+    <br><br>
+    <a [routerLink]="['/productos']" class="btn-back">Regresar</a>
+
+</div>

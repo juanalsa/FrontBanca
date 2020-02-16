@@ -196,7 +196,7 @@ export class ProductosService {
       accountInformation: {
         accountIdentifier: '4544769920667610',
         productType: 'CREDIT_CARD',
-        bank: 'BANCO_2'
+        bank: 'BANCO_1'
       },
 
       locked: true,
@@ -205,11 +205,11 @@ export class ProductosService {
       dueDate: '2019-12-26T00:00:00',
       productAccountBalances: {
         pago_total_pesos: {
-          amount: -126012.54,
+          amount: 12000000,
           currencyCode: 'COP'
         },
         cupo_disponible_avances_pesos: {
-          amount: 35000000,
+          amount: 23000000,
           currencyCode: 'COP'
         },
         saldo_mora_pesos: {
@@ -217,17 +217,17 @@ export class ProductosService {
           currencyCode: 'COP'
         },
         saldo_actual: {
-          amount: -126012.54,
+          amount: 12000000,
           currencyCode: 'COP'
         },
         cupo_disponible_compras_pesos: {
-          amount: 35000000,
+          amount: 23000000,
           currencyCode: 'COP'
         },
-        valor_pago_minimo: {
-          amount: 0.38,
-          currencyCode: 'COP'
-        },
+        // valor_pago_minimo: {
+        //   amount: 0.38,
+        //   currencyCode: 'COP'
+        // },
         cupo_total: {
           amount: 35000000,
           currencyCode: 'COP'
@@ -239,7 +239,7 @@ export class ProductosService {
       accountInformation: {
         accountIdentifier: '5201897302970640',
         productType: 'CREDIT_CARD',
-        bank: 'BANCO_3'
+        bank: 'BANCO_2'
       },
       locked: true,
       id: '5201897302970640',
@@ -259,7 +259,7 @@ export class ProductosService {
           currencyCode: 'COP'
         },
         saldo_actual: {
-          amount: 105968,
+          amount: 1059680,
           currencyCode: 'COP'
         },
         cupo_disponible_compras_pesos: {
@@ -1238,7 +1238,7 @@ export class ProductosService {
     if ( productType ) {
       result = result.filter( product => product.accountInformation.productType === productType );
     } 
-    // console.log(result);
+    console.log(result);
     
     return result;
   }

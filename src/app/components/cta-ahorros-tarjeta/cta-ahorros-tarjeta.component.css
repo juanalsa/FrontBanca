@@ -1,0 +1,22 @@
+.product-card {
+    margin: 5px;
+    min-width: 350px;
+}
+
+
+/*.lnk-detalle-producto {
+    position: absolute;
+    right: 10px;
+} */
+
+.tbl-saldos {
+    width: 100%;
+}
+
+.txt-saldo-disp {
+    font-size: large;
+}
+
+.lnk-detalle-producto {
+    font-size: small;
+}

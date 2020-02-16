@@ -1,0 +1,30 @@
+<mat-card class="product-card">
+    <mat-card-header>
+        <img mat-card-avatar src="https://image.shutterstock.com/image-vector/no-image-available-sign-internet-260nw-261719003.jpg">
+
+        <mat-card-title> {{ producto.typeAccount }} </mat-card-title>
+        <mat-card-subtitle> Nro. {{ producto.accountInformation.accountIdentifier }} </mat-card-subtitle>
+
+        <a href="" class="lnk-detalle-producto" [routerLink]="['/cta-ahorros', producto.id]">Ver detalle ></a>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <p>Saldo disponible:<br>
+            <b class="txt-saldo-disp">{{ producto.productAccountBalances.saldo_disponible.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b></p>
+    </mat-card-content>
+    <mat-card-actions>
+
+        <table class="tbl-saldos">
+            <tr>
+                <td>
+                    <p>En Bolsillos:<br> <b>{{ (producto.productAccountBalances.saldo_canje.amount + producto.productAccountBalances.saldo_actual.amount - producto.productAccountBalances.saldo_disponible.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}</b></p>
+                </td>
+                <td>
+                    <p>Saldo Total:<br> <b>{{ (producto.productAccountBalances.saldo_canje.amount + producto.productAccountBalances.saldo_actual.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}</b></p>
+                </td>
+            </tr>
+        </table>
+
+        <!-- <button mat-button>PAGAR</button> -->
+    </mat-card-actions>
+</mat-card>

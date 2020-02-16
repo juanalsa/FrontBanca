@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductoTarjetaComponent } from './producto-tarjeta.component';
+import { CtaAhorrosTarjetaComponent } from './cta-ahorros-tarjeta.component';
 
-describe('ProductoTarjetaComponent', () => {
-  let component: ProductoTarjetaComponent;
-  let fixture: ComponentFixture<ProductoTarjetaComponent>;
+describe('CtaAhorrosTarjetaComponent', () => {
+  let component: CtaAhorrosTarjetaComponent;
+  let fixture: ComponentFixture<CtaAhorrosTarjetaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductoTarjetaComponent ]
+      declarations: [ CtaAhorrosTarjetaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductoTarjetaComponent);
+    fixture = TestBed.createComponent(CtaAhorrosTarjetaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,35 @@
+<mat-card class="product-card">
+    <mat-card-header>
+
+        <img mat-card-avatar *ngIf="producto.id.charAt(0) === '4'" src="https://cdn.iconscout.com/icon/free/png-256/visa-7-282549.png">
+        <img mat-card-avatar *ngIf="producto.id.charAt(0) === '5'" src="https://i0.pngocean.com/files/494/499/764/5bbf4cb6566b2-thumb.jpg">
+
+        <mat-card-title> {{ producto.typeAccount }} </mat-card-title>
+        <mat-card-subtitle> Nro. {{ producto.accountInformation.accountIdentifier | creditCard }} </mat-card-subtitle>
+
+        <a href="" class="lnk-detalle-producto" [routerLink]="['/tarj-credito', producto.id]">Ver detalle ></a>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <p *ngIf="producto.productAccountBalances.valor_pago_minimo">Próximo pago mínimo:<br>
+            <b class="txt-saldo-disp">
+                {{ producto.productAccountBalances.valor_pago_minimo.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b><br><br> Pago total: {{ producto.productAccountBalances.pago_total_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2'
+            }} <br> Fecha de pago: {{ producto.dueDate | date:"dd/MMM/yy" }}
+        </p>
+
+        <p *ngIf="!producto.productAccountBalances.valor_pago_minimo">Cupo disponible:<br>
+            <b class="txt-saldo-disp">
+                {{ producto.productAccountBalances.cupo_disponible_compras_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b>
+            <br><br> Fecha de corte: {{ producto.dueDate | date:"dd/MMM/yy" }}
+            <br><br> Total gastado: {{ (producto.productAccountBalances.saldo_actual.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}
+        </p>
+
+        <mat-progress-bar *ngIf="!producto.productAccountBalances.valor_pago_minimo" mode="determinate" value="{{ (producto.productAccountBalances.saldo_actual.amount / producto.productAccountBalances.cupo_total.amount) * 100 }}"></mat-progress-bar>
+
+    </mat-card-content>
+    <mat-card-actions>
+
+        <button mat-raised-button *ngIf="producto.productAccountBalances.valor_pago_minimo" color="primary" class="btn-pagar-tc">PAGAR</button>
+
+    </mat-card-actions>
+</mat-card>

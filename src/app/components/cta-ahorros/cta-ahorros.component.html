@@ -1,0 +1,26 @@
+<div>
+    <h1>{{ producto.typeAccount }}</h1>
+    <h3>Nro. {{ producto.accountInformation.accountIdentifier }}</h3>
+    <p>Saldo disponible:<br>
+        <b class="txt-saldo-disp">{{ producto.productAccountBalances.saldo_disponible.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</b>
+    </p>
+    <p>
+        Fecha última transacción: {{ producto.lastTransactionDate | date:'dd/MMM/yy' }}
+    </p>
+
+    <table class="tbl-saldos">
+        <tr>
+            <td>
+                <p>En Bolsillos:<br> <b>{{ (producto.productAccountBalances.saldo_canje.amount + producto.productAccountBalances.saldo_actual.amount - producto.productAccountBalances.saldo_disponible.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}</b></p>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>
+                <p>Saldo Total:<br> <b>{{ (producto.productAccountBalances.saldo_canje.amount + producto.productAccountBalances.saldo_actual.amount) | currency:'COP':'symbol-narrow':'1.2-2' }}</b></p>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <a [routerLink]="['/productos']" class="btn-back">Regresar</a>
+</div>

@@ -1,0 +1,16 @@
+.product-card {
+    margin: 5px;
+    min-width: 350px;
+}
+
+.txt-saldo-disp {
+    font-size: large;
+}
+
+.btn-pagar-tc {
+    width: 100%;
+}
+
+.lnk-detalle-producto {
+    font-size: small;
+}

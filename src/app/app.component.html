@@ -1,28 +1,31 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav mode="side" opened class="sidenav">
 
-        <table>
-            <tr>
-                <td>
-                    <a class="nav-link" [routerLink]="['productos']">TUS PRODUCTOS</a>
-                </td>
-            </tr>
-            <tr>
-                <td>TUS ORGANIZADOR</td>
-            </tr>
-            <tr>
-                <td>PAGOS</td>
-            </tr>
-            <tr>
-                <td>TRANSFERENCIAS</td>
-            </tr>
-            <tr>
-                <td>CERTIFICADOS</td>
-            </tr>
-            <tr>
-                <td>SEGURIDAD</td>
-            </tr>
-        </table>
+        <mat-list>
+            <mat-list-item>
+                <a class="nav-link" [routerLink]="['productos']">TUS PRODUCTOS</a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                TUS ORGANIZADOR
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                PAGOS
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                TRANSFERENCIAS
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                CERTIFICADOS
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                SEGURIDAD
+            </mat-list-item>
+        </mat-list>
 
     </mat-sidenav>
 
